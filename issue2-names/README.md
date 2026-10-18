@@ -1,5 +1,8 @@
 # tlapm proves false theorems: abstracted terms are named by 20 bits of a hash, and the hashed print does not distinguish a bound variable from a constant of the same name
 
+**Filed upstream as [tlaplus/tlapm#310](https://github.com/tlaplus/tlapm/issues/310).** The companion defect in
+[`../issue1-binder/`](../issue1-binder/) is [tlaplus/tlapm#309](https://github.com/tlaplus/tlapm/issues/309).
+
 **Builds tested, both arm64-darwin, identical results:**
 
 | Build | Source | sha256 of `bin/tlapm` | Date tested |
