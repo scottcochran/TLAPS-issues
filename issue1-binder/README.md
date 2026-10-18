@@ -1,5 +1,8 @@
 # tlapm proves false theorems: an untranslated term under a binder is abstracted as a nullary constant
 
+**Filed upstream as [tlaplus/tlapm#309](https://github.com/tlaplus/tlapm/issues/309).** The companion defect in
+[`../issue2-names/`](../issue2-names/) is [tlaplus/tlapm#310](https://github.com/tlaplus/tlapm/issues/310).
+
 **Builds tested, both arm64-darwin, identical results:**
 
 | Build | Source | sha256 of `bin/tlapm` | Date tested |
