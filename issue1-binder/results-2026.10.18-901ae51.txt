@@ -1,0 +1,32 @@
+== tlapm 901ae51, sha256 940a42ab3f5b51d3, Darwin arm64
+== THEOREMs by line:
+20:THEOREM BadEnabled_OBVIOUS 
+21:THEOREM BadEnabled_SMT     
+22:THEOREM BadEnabled_Zenon   
+23:THEOREM BadEnabled_Isa     
+29:THEOREM BadEventually 
+34:THEOREM Control 
+== verdict per obligation (line, status, backend):
+  line 20  proved   smt
+  line 21  proved   smt
+  line 22  proved   zenon
+  line 23  proved   isabelle
+  line 30  proved   smt
+  line 35  failed   isabelle
+  line 35  failed   smt
+  line 35  failed   zenon
+
+== TLC: BadEnabled as INVARIANT, S = {1, 2}
+Error: Invariant BadEnabled is violated by the initial state:
+x = 1
+Finished in 05s at (2026-10-18 00:22:01)
+
+== TLC: BadEventuallyProp as PROPERTY, S = {1, 2}
+Finished computing initial states: 2 distinct states generated at 2026-10-18 00:22:06.
+Error: Temporal properties were violated.
+Error: The following behavior constitutes a counter-example:
+State 1: <Initial predicate>
+x = 1
+State 2: Stuttering
+Finished checking temporal properties in 00s at 2026-10-18 00:22:06
+Finished in 05s at (2026-10-18 00:22:06)

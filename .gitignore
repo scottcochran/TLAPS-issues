@@ -1,0 +1,6 @@
+tlaps/
+tlaps-*/
+tla2tools.jar
+.tlacache/
+states/
+*.tar.gz

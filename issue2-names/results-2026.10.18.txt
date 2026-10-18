@@ -1,0 +1,54 @@
+== tlapm 7824dab, sha256 e150fb793fb28592, Darwin arm64
+== THEOREMs by line:
+25:THEOREM HashSMT 
+27:THEOREM Control_HashSMT 
+37:THEOREM HashPTL 
+39:THEOREM Control_HashPTL 
+50:THEOREM Capture 
+53:THEOREM Control_Capture 
+== verdict per obligation (line, status, backend):
+  line 25  proved   smt
+  line 27  failed   smt
+  line 37  proved   ls4
+  line 39  failed   ls4
+  line 51  proved   smt
+  line 54  failed   isabelle
+  line 54  failed   smt
+  line 54  failed   zenon
+
+== names in the backend inputs tlapm wrote (.tlacache):
+  tlapm_10ed8b.smt: OPAQUE__h4cb21 x3 
+  tlapm_2837f1.smt: OPAQUE__h43490 x2 OPAQUE__h4cb21 x2 
+  tlapm_497f9f.smt: OPAQUE__h01f29 x2 OPAQUE__h4ad56 x2 
+  tlapm_ba7836.smt: OPAQUE__h4ad56 x3 
+  tlapm_1fcb1d.ls4: not (((always (cc | ~ cc)) -> (h0823c -> h0823c)))
+  tlapm_1fcb1d.ls4.out: Loaded spec -- sigsize: 2, #initial: 2, #goal: 0, #universal: 1, #step: 0 Eliminated 2 variables -- new sigsize: 0. Simplified from 2 to 0 clauses. UNSAT: unconditional empty clause derived, in fact a (0,*)-clause. Solver called 1 times (learned 0 clauses). 0 clauses leaped. 
+  tlapm_25b90b.ls4: not (((always (cc | ~ cc)) -> (h0823c -> hb0a71)))
+  tlapm_25b90b.ls4.out: Loaded spec -- sigsize: 3, #initial: 2, #goal: 0, #universal: 1, #step: 0 Eliminated 3 variables -- new sigsize: 0. Simplified from 2 to 0 clauses. SAT: model found low_block_idx=0, low_layer_idx=0, high_block_idx=1, high_layer_idx=0 GG ** Solver called 2 times (learned 0 clauses). 0 clauses leaped.
+  tlapm_2c8b30.znn: ;; obligation #10 $hyp "a_CONSTANTunde_cunde_a_in" (TLA.in a_CONSTANTunde_cunde_a a_CONSTANTunde_Dunde_a) $goal (=> a_h4ad56a a_h01f29a)
+  tlapm_2c8b30.znn.out: (* Current branch: a_h4ad56a (TLA.in a_CONSTANTunde_cunde_a a_CONSTANTunde_Dunde_a) (-. a_h01f29a) *) (* NO-PROOF *) 
+
+== TLC: NameUnsound_A.cfg, D = {1, 2}
+Error: Temporal properties were violated.
+Error: The following behavior constitutes a counter-example:
+State 1: <Initial predicate>
+/\ w = <<1, 1>>
+/\ x = 1
+/\ y = 3
+State 2: Stuttering
+Finished in 05s at (2026-10-18 00:27:02)
+== TLC: NameUnsound_B.cfg, D = {1, 2}
+Error: Invariant HashPTLProp is violated by the initial state:
+/\ w = <<1, 1>>
+/\ x = 1
+/\ y = 3
+Finished in 05s at (2026-10-18 00:27:07)
+== TLC: NameUnsound_C.cfg, D = {1, 2}
+Error: Temporal properties were violated.
+Error: The following behavior constitutes a counter-example:
+State 1: <Initial predicate>
+/\ w = <<1, 1>>
+/\ x = 1
+/\ y = 3
+State 2: Stuttering
+Finished in 05s at (2026-10-18 00:27:13)
