@@ -13,6 +13,18 @@ backend inputs as evidence, and results on two builds: `7824dab` (the `1.6.0-pre
 Each module pairs every unsound theorem with a control of the same shape that the prover correctly rejects.
 The README in each directory is written as the issue report.
 
+## Related upstream issues
+
+| Issue | State | Relation |
+|---|---|---|
+| [tlaplus/tlapm#197](https://github.com/tlaplus/tlapm/issues/197) Coalescing has issues with abstracting bound variables | open | Issue 1 is the soundness side of this incompleteness report; its workaround does not avoid issue 2 |
+| [tlaplus/tlapm#75](https://github.com/tlaplus/tlapm/issues/75) ENABLED is not coalesced | open | Issue 1, for `ENABLED` |
+| [tlaplus/tlapm#69](https://github.com/tlaplus/tlapm/issues/69) Instantiated fairness identified with fairness of instantiated action | open | A different soundness defect in `ENABLED`/fairness handling, adjacent to issue 1 |
+| [tlaplus/tlapm#120](https://github.com/tlaplus/tlapm/issues/120) Variable renames in LAMBDA | open | Issue 2's capture, seen as a proof passing or failing on a bound name |
+
+Searched 2026-10-18 for hash, md5, collision, capture, shadow, bound variable, coalesce, opaque, nullary, unsound,
+false theorem. Nothing reports the hash-width naming or the missing collision check.
+
 ## Running
 
 ```sh

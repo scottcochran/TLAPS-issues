@@ -22,8 +22,17 @@ proves by `OBVIOUS`, `BY SMT`, `BY Zenon` and `BY Isa`. The same statement with 
 The control, the same quantifier shape over a term tlapm *does* translate (`x = t`), correctly fails on all three
 backends, so this is specifically the abstraction step.
 
-Related: #197 reports the same abstraction failing to prove *true* theorems (incompleteness); this is the soundness
-side of that defect. #75 (ENABLED not coalesced) is the same mechanism for ENABLED.
+## Related upstream issues
+
+- [tlaplus/tlapm#197](https://github.com/tlaplus/tlapm/issues/197) *Coalescing has issues with abstracting bound
+  variables* (open): the same abstraction failing to prove **true** theorems, an incompleteness report. This is the
+  soundness side of that defect: the abstracted term drops the bound variable, so it both blocks valid proofs and
+  admits invalid ones. The hidden-operator workaround given there is the mitigation this report's authors also use.
+- [tlaplus/tlapm#75](https://github.com/tlaplus/tlapm/issues/75) *ENABLED is not coalesced* (open, enhancement): the
+  same mechanism for `ENABLED`, reported as a gap in what proves.
+- [tlaplus/tlapm#69](https://github.com/tlaplus/tlapm/issues/69) *TLAPM identifies instantiated fairness condition
+  with fairness of instantiated action* (open): a different soundness defect in how `ENABLED` and fairness, which bind
+  state variables implicitly, are handled; listed because any fix to the translation of `ENABLED` touches both.
 
 ## Files
 

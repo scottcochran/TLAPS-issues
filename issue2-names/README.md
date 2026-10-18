@@ -31,6 +31,18 @@ every backend. TLC refutes all three false statements at `D = {1, 2}`.
 Note the name of a hidden definition is a function of its *source name only*, so a proof author cannot see
 or avoid a collision from the module text.
 
+## Related upstream issues
+
+- [tlaplus/tlapm#120](https://github.com/tlaplus/tlapm/issues/120) *Variable renames in LAMBDA* (open): expanding a
+  definition whose parameter name matches a name in the proof context; the display printer renames one occurrence
+  (`y_1`) and a step passes or fails on the bound name alone. That is the capture of consequence 2 seen from the
+  completeness side, and the comment there that fingerprints ignore lambda parameters points at the same printer.
+- [tlaplus/tlapm#197](https://github.com/tlaplus/tlapm/issues/197) *Coalescing has issues with abstracting bound
+  variables* (open): the workaround it recommends, hiding a temporal body behind an operator, does not avoid this
+  defect, since the name of a hidden operator's abstraction is still a hash of its print.
+
+Nothing in the tracker reports the hash width or the missing collision check.
+
 ## Files
 
 | File | What |
